@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Program {
+    - New project: String
+    - Update details or finalise a project: String
+    - View all projects: String
+    - View in-progress projects: String
+    - View over-due projects: String
+    - Search project: String
+    - Exit: String
+
+    + viewAllProjects()
+    + overdueProjects()
+    + incompleteProjects()
+}
+
+class NewProject {
+    - Project details
+    - Customer details
+    - Contractor details
+    - Architect details
+
+    + Connection()
+}
+
+Program <|- NewProject
+
+class SearchProject {
+    - Search project number
+    - Search project name
+
+    + Connection()
+}
+
+ SearchProject -|> Program
+
+class UpdateProject {
+    - Finalise project
+    - Change due-date
+    - Make a payment
+    - Back to main menu
+
+    + Connection()
+}
+
+Program <|-- UpdateProject
+
+@enduml
